@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/*_______________navbar___________*/
+#wrapper{
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+}
+.white{
+    background-color: white;
+}
+.navbar{
+    transition: all 0.5s;
+}
+nav{
+    background-color: rgb(36, 35, 35);
+    /*background: transparent*/
+    color: white;
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    padding: 15px 80px 0px 50px;
+    position: fixed;
+    z-index: 100;
+    overflow: visible;
+}
+.brand{
+    display: flex;
+    width: 30%;
+}
+.logo{
+    height: 40px;
+    width: 40px;
+    margin-top: 2px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px;
+}
+.brand-name{
+    font-size: 1.7rem;
+    margin-left: 10px;
+    font-family: "Merienda", cursive;
+    font-style: normal;
+}
+.brand-name:hover{  
+    font-family: "Marck Script", cursive;
+    font-weight: bold;
+    font-style: normal; 
+    color: yellowgreen; 
+    font-size: 2rem;    
+}
+.toggler{
+    cursor: pointer;
+    display: none;
+    background-color: white;
+    border-radius: 5px;
+    /*position: absolute;*/
+}
+.toggler-show{
+    display: block !important;
+    
+}
+.menu{
+    width: 25%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px;
+    transition: all 0.5s;
+}
+.menu li{
+    font-size: 1rem;
+}
+.menu li:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.option-link{
+    color: white;
+    text-decoration: none;
+}
+.downward-icon{
+    height: 15px;
+    width: 15px;
+    margin-right: 5px;
+}
+
+
+.menu-tech{
+    width: 40%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 10px 20px 300px;
+    transition: all 0.5s;
+}
+.menu-tech li:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.search{
+    display: flex;
+}
+#search-box{
+    font-size: 1rem;
+    padding: 5px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: 0px solid black;
+}
+.search-icon{
+    height: 28px;
+    width: 25px;
+    background-color: white;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 5px;
+}
+
+
+/* _____________________home___________________*/
+
+#home{
+    overflow-x: hidden;
+    height: 120vh;
+    background-image: url(images/bg1.jpg);
+    background-position: top right;
+    background-attachment: fixed;
+    position: relative;
+}
+#home h1{
+    position: absolute;
+    top:25%;
+    left: 40%;
+    color: black;
+    font-size: 5.6rem;
+    text-shadow: 2px 2px 5px rgb(69, 105, 14);
+    opacity: 0.6;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing;
+    animation-duration: 2s;
+    animation-timing-function: steps(30, end);
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+.home-para{
+    color: black;
+    position: absolute;
+    top:53%;
+    left: 40%;
+    font-size: 1.3rem;
+    padding: 20px;
+    font-weight: 500;
+    z-index: 1;
+}
+.home-btn{
+    position: absolute;
+    top:60%;
+    left: 41.5%;
+    background-color: green;
+    color: white;
+    width: 12%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px auto;
+    font-size: 1.2rem;
+}
+.home-btn:hover{
+    background-color: rgb(119, 173, 11);
+    color: rgb(10, 10, 10);
+    font-size: bold;
+}
+
+/* ___________________about___________*/
+
+#about{
+    background-image: linear-gradient(to right,bisque, white);
+    color: black;
+    font-size: 1.2rem;
+    padding: 80px 60px 0 60px;
+}
+.about-head{
+    text-align: center;
+}
+.about-para{
+    margin-top: 30px;
+    text-align: center;
+    
+}
+.features-img{
+    width: 25rem;
+    height: 17rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow-y: hidden;
+}
+.features ul{
+    margin-bottom: 100px;
+}
+.features ul li{
+    margin: 100px auto;
+    display: flex;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(36, 35, 35);
+    color: white;
+}
+.features ul li:hover{
+    box-shadow: 10px 10px 10px grey;
+}
+.feature-content{
+    text-align: center;
+    padding: 20px;
+    width: 70%;
+}
+.feature-content h4{
+    display: block;
+    text-decoration: underline;
+    text-align: center;
+}
+.features ul p{
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+.about-btn{
+    background-color: green;
+    color: white;
+    width: 20%;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 20px auto 10px auto;
+}
+.about-btn:hover{
+    box-shadow: 2px 2px 2px white;
+}
+.about-btn-link{
+    color: white;
+    text-decoration: none;
+}
+
+/* ___________________contact___________*/
+
+#contact-section{
+    background-image: linear-gradient(rgb(53, 52, 52),rgb(53, 52, 52), black);
+    color: white;
+    padding: 40px 80px;
+}
+.footer-info{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.footer-info ul{
+    margin: 10px 0;
+}
+.footer-info ul li{
+    padding: 5px;
+}
+.footer-info-head{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+#email{
+    font-size: 0.9rem;
+    padding: 8px;
+    border-radius: 5px;
+}
+.subscribe{
+    background-color: orangered;
+    color: white;
+    font-size: 0.9rem;
+    padding: 8px;
+    border-radius: 5px;
+}
+.subscribe:hover{
+    background-color: green;
+}
+.social-media-icon{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+.social-media-icon:hover{
+    transform: scale(1.2);
+}
+.footer-divide{
+    margin: 40px auto;
+    display: block;
+    width: 79%;
+}
+.footer-brand{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.copyright{
+    align-self: center;
+}
+.footer-logo{
+    display: flex;
+}
+.upward-icon{
+    width: 35px;
+    height: 30px;
+}
+.upward-icon:hover{
+    width: 37px;
+    height: 32px;
+    transform: rotate(180deg);
+}
+
+/*_______________responsive__________________*/
+
+/*@media only screen and (max-width: 1920px){}*/
+
+@media only screen and (max-width: 1280px){
+
+    nav{
+        padding: 15px 10px 0px 10px;
+    }
+    .brand{
+        display: flex;
+        width: 25%;
+    }
+    .logo{
+        height: 20px;
+        width: 30px;
+        margin-top: 5px;
+    }
+    .brand-name{
+        font-size: 1.3rem;
+        margin-left: 5px;
+        font-family: "Merienda", cursive;
+        font-style: normal;
+    }
+    .menu{
+        width: 38%;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 20px;
+    }
+    .menu li{
+        font-size: 1rem;
+    }
+    .downward-icon{
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+    }
+    .menu-tech{
+        width: 40%;
+        justify-content: end;
+        margin: 8px 10px 20px 30px;
+    }
+    #search-box{
+        font-size: 0.9rem;
+        padding: 2px;        
+    }
+    .search-icon{
+        margin-right: 5px;
+    }
+    
+
+/* _____________________home___________________*/
+
+#home{
+    height: 100vh;
+    background-image: url(images/bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#home h1{
+    top:35%;
+    left: 10%;
+    font-size: 4rem;
+    opacity: 0.8;
+}
+.home-para{
+    color: white;
+    top:64%;
+    left: 9%;
+    font-size: 0.9rem;
+}
+.home-btn{
+    top:71%;
+    left: 11%;
+    width: 25%;
+    font-size: 0.9rem;
+}
+
+/* ___________________about___________*/
+
+#about{
+    
+    padding: 80px 40px 0 40px;
+}
+.features-img{
+    width: 25rem;
+    height: 19rem;
+}
+.features ul{
+    margin-bottom: 60px;
+}
+.features ul li{
+    margin: 80px auto;
+    display: flex;
+    width: 100%;
+}
+.feature-content{
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+.about-btn{
+    width: 40%;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+/* ___________________contact___________*/
+
+#contact-section{
+    padding: 20px 40px;
+}
+.footer-info{
+    margin-top: 20px;
+    justify-content:space-between;
+}
+.newsletter{
+    align-self: flex-start;
+}
+.footer-divide{
+    width: 83%;
+}
+.footer-brand{
+    display: block;
+}
+.footer-logo{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.copyright{
+    text-align: center;
+}
+.upward-icon{
+    display: none;
+}
+}
+@media only screen and (max-width: 875px){
+    /*____________________navbar________________*/
+    .navbar{
+        justify-content: unset;
+        padding: 10px 10px;
+    }
+    .brand{
+        width: 85%;
+    }
+    .menu{
+        display: none;
+        position: absolute;
+        left: 82.5%;
+    }
+    .menu-tech{
+        display: none;
+        position: absolute;
+        top: 156%;
+        left: 85%;
+    }
+    .downward-icon{
+        transform: rotate(270deg);
+        height: 10px;
+        width: 10px;
+    }
+    .search-icon{
+        display: none;
+    }
+    .toggler{
+        display: flex;
+        margin-top: 7px;
+        margin-right: 0%;
+        height: 30px;
+        width: 40px;
+        position: absolute;
+        right: 2%;
+    }
+    .logo{
+        height: 25px;
+        width: 30px;
+    }
+    .brand-name{
+        font-size: 1.5rem;
+    }
+    .menu-tech{
+        width: 100%;
+        margin:5px 10px 20px 0px;
+        justify-content: end;
+        gap: 15px;
+    }
+    #search-box{
+        display: none;
+    }
+    .search-icon{
+        height: 25px;
+        width: 30px;
+        border-radius: 5px;
+        padding: 0px;
+    }
+       
+    /*________about_____________*/
+
+    .about-btn{
+        font-size: 1rem;
+    }
+    .features ul li{
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 601px){
+
+/*__________navbar____________*/
+.navbar{
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.brand{
+    width: 100%;
+    position: relative;
+}
+.menu{
+    left: 75.5%;
+}
+.menu-tech{
+    top: 165%;
+    left: 80%;
+}
+.toggler{
+    margin-top: 7px;
+    margin-right: 0%;
+    height: 30px;
+    width: 40px;
+    right: 0;
+}
+.logo{
+    height: 30px;
+    width: 30px;
+}
+.brand-name{
+    font-size: 1.8rem;
+}
+
+
+/* _____________________home___________________*/
+
+#home h1{
+    top:39%;
+    left: 10%;
+    font-size: 3rem;
+}
+.home-para{
+    color: white;
+    top:58%;
+    left: 7%;
+    font-size: 0.9rem;
+}
+.home-btn{
+    top:67%;
+    left: 11%;
+    font-size: 0.9rem;
+    padding: 5px;
+}
+
+    /*___________about____________*/
+    .features-img{
+        width: 24rem;
+        height: 15rem;
+    }
+    .features ul li{
+        display: block;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    /*________________navbar________________*/
+    .navbar{
+        padding: 10px 15px;
+    }
+    .logo{
+        height: 25px;
+        width: 25px;
+    }
+    .brand-name{
+        font-size: 1.5rem;
+    }
+    .toggler{
+        margin-top: 5px;
+        height: 25px;
+        width: 35px;
+    }
+    .menu{
+        left: 71.5%;
+    }
+    .menu-tech{
+        top: 158%;
+        left: 76%;
+    }
+    
+    /*______________home______________*/
+    #home h1{
+        left: 7%;
+        font-size: 2.4rem;
+        opacity: 0.8;
+    }
+    .home-para{
+        color: white;
+        top:58%;
+        left: 5%;
+        font-size: 0.9rem;
+    }
+    .home-btn{
+        top:69%;
+        left: 8%;
+        width: 30%;
+        padding: 5px;
+    }
+    
+    /*___________about____________*/
+    .features-img{
+        width: 25rem;
+        height: 12rem;
+    }
+    .features ul li{
+        width: 100%;
+    }
+}
+
