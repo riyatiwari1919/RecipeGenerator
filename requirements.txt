@@ -1,0 +1,9 @@
+streamlit
+spacy
+rasa
+numpy
+pandas
+scikit-learn
+transformers
+torch
+spacy download en_core_web_sm
