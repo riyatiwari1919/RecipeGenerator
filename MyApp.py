@@ -1,12 +1,7 @@
 import spacy
-from rasa_nlu.model import Interpreter
-import random
 
 # Load a pre-trained spaCy model for NLP
 nlp = spacy.load("en_core_web_sm")
-
-# Load Rasa NLU model (assuming the model is already trained and available)
-interpreter = Interpreter.load("./models/nlu")
 
 # Sample recipes database
 recipes = {
@@ -25,6 +20,7 @@ recipes = {
 }
 
 def generate_recipe(food_item):
+    """Returns the recipe for a given food item."""
     food_item = food_item.lower()
     if food_item in recipes:
         recipe = recipes[food_item]
@@ -33,15 +29,17 @@ def generate_recipe(food_item):
         return f"Sorry, I don't have a recipe for {food_item}."
 
 def get_food_from_input(user_input):
+    """Extracts food item from user input."""
     doc = nlp(user_input)
     for token in doc:
-        if token.pos_ == "NOUN":
-            return token.text
-    return ""
+        if token.text.lower() in recipes:
+            return token.text.lower()
+    return None
 
 # Example interaction
-user_input = "Can you give me a recipe for pasta?"
+user_input = input("What recipe do you need? ")  # Example: "Can you give me a recipe for pancakes?"
 food_item = get_food_from_input(user_input)
+
 if food_item:
     print(generate_recipe(food_item))
 else:
