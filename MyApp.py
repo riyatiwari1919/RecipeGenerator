@@ -1,7 +1,13 @@
+import os
 import spacy
+import streamlit as st
 
-# Load a pre-trained spaCy model for NLP
-nlp = spacy.load("en_core_web_sm")
+# Ensure spaCy model is installed
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    os.system("python -m spacy download en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 
 # Sample recipes database
 recipes = {
@@ -24,7 +30,7 @@ def generate_recipe(food_item):
     food_item = food_item.lower()
     if food_item in recipes:
         recipe = recipes[food_item]
-        return f"Recipe for {food_item.capitalize()}:\n\nIngredients: {', '.join(recipe['ingredients'])}\n\nInstructions: {recipe['instructions']}"
+        return f"### Recipe for {food_item.capitalize()}\n\n**Ingredients:**\n- " + "\n- ".join(recipe['ingredients']) + f"\n\n**Instructions:**\n{recipe['instructions']}"
     else:
         return f"Sorry, I don't have a recipe for {food_item}."
 
@@ -36,11 +42,14 @@ def get_food_from_input(user_input):
             return token.text.lower()
     return None
 
-# Example interaction
-user_input = input("What recipe do you need? ")  # Example: "Can you give me a recipe for pancakes?"
-food_item = get_food_from_input(user_input)
+# Streamlit UI
+st.title("AI-Powered Recipe Generator 🍽️")
 
-if food_item:
-    print(generate_recipe(food_item))
-else:
-    print("I couldn't understand the food item. Please try again.")
+user_input = st.text_input("Enter a food item or ask for a recipe:", "")
+
+if user_input:
+    food_item = get_food_from_input(user_input)
+    if food_item:
+        st.markdown(generate_recipe(food_item))
+    else:
+        st.warning("I couldn't understand the food item. Please try again.")
